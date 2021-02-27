@@ -1,0 +1,19 @@
+Assignments
+1. Line 27 should be += instead of =
+2. Function should be named `findPetWalker`
+3. Function parameter is `allWalker` but for..of loop is iterating `allWalkers`
+
+Walkers
+1. Import statement imports `getWalker` but should be `getWalkers`
+2. The `fullName` property should just be `name`
+3. Component function is missing `return walkerHTML`
+
+CityList
+1. `getWalker()` is invoked but `getWalkers()` is imported
+2. for..of loop defines `walker` but `currentWalker` is used in string template
+3. The <ol> should be a <ul>
+
+CSS
+1. @import 'detail.css'; is the wrong file name
+2. details.css misspells `flex` as `fle`
+3. .detail--column class should define some padding
