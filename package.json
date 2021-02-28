@@ -1,0 +1,23 @@
+{
+  "name": "deshawn-dog-walking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^6.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevebrownlee/debugging-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevebrownlee/debugging-intro/issues"
+  },
+  "homepage": "https://github.com/stevebrownlee/debugging-intro#readme"
+}

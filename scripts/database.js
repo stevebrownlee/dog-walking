@@ -59,11 +59,11 @@ const database = {
     }],
     pets: [{
         "id": 1,
-        "name": "Dianemarie Hartness",
+        "name": "Figs",
         "walkerId": 3
     }, {
         "id": 2,
-        "name": "Christoph Fosdyke",
+        "name": "Klondike",
         "walkerId": 10
     }, {
         "id": 3,
