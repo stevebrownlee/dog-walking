@@ -7,9 +7,17 @@
     </head>
 
     <body>
-        <main id="container">
-
+        <main id="park" style="margin-top: 11rem;">
+            Park services: hiking, canoeing, picnicking, parking, lodging, wall climbing, rafting, fishing
         </main>
+
+        <script>
+            document.addEventListener("click", e => {
+                if (e.target.id === "park") {
+                    window.alert("Hiking is available in Lost Wolf Hiking Trail and Pine Bluffs Trails.")
+                }
+            })
+        </script>
 
         <script type="module" src="./scripts/main.js"></script>
     </body>
