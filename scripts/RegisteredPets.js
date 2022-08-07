@@ -3,23 +3,33 @@ import { getPets, getWalkers } from "./database.js"
 document.addEventListener(
     "click",
     (clickEvent) => {
+        // HTML click event target
         const itemClicked = clickEvent.target
+
+        // Did the user click on a pet <li>?
         if (itemClicked.id.startsWith("pet")) {
-            const [,petId] = itemClicked.id.split("--")
 
+            // What is the primary key of the clicked pet?
+            const [,petPrimaryKey] = itemClicked.id.split("--") // "4"
+
+            // Find the whole pet object to get the name
+            let matchingPet = null
             for (const pet of pets) {
-                if (pet.id === parseInt(petId)) {
-
-                    let assignedWalker = {name: ""};
-                    for (const walker of walkers) {
-                        if (walker.id === pet.walkerId) {
-                            assignedWalker = walker
-                        }
-                    }
-                    // const assignedWalker = walkers.find(walker => walker.id === pet.walkerId)
-                    window.alert(`${pet.name} is being walked by ${assignedWalker.name}`)
+                if (parseInt(petPrimaryKey) === pet.id) {
+                    matchingPet = pet
                 }
             }
+
+
+            // Find the related walker object assigned to the pet
+            let matchingWalker = null
+            for (const walker of walkers) {
+                if (matchingPet.walkerId === walker.id) {
+                    matchingWalker = walker
+                }
+            }
+
+            window.alert(`${matchingPet.name} is being walked by ${matchingWalker.name}`)
         }
     }
 )
