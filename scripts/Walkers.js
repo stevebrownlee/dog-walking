@@ -1,26 +1,22 @@
 import { getCities, getWalkerCities, getWalkers } from "./database.js"
 
-const cities = getCities()
-const walkerCities = getWalkerCities()
 
 const filterWalkerCitiesByWalker = (walker) => {
+    const walkerCities = getWalkerCities()
+
     // Define an empty array to store all of the assignment objects
-
-    // Iterate the array value of walkerCities
-
-    // Check if the primary key of the walker equals the foreign key on the assignment
-
-    // If it does, add the current object to the array of assignments
-
-    // After the loop is done, return the assignments array
     const assignments = []
 
+    // Iterate the array value of walkerCities
     for (const assignment of walkerCities) {
+        // Check if the primary key of the walker equals the foreign key on the assignment
         if (assignment.walkerId === walker.id) {
+            // If it does, add the current object to the array of assignments
             assignments.push(assignment)
         }
     }
 
+    // After the loop is done, return the assignments array
     return assignments
 }
 
@@ -48,6 +44,7 @@ const assignedCityNames = (assignments) => {
 document.addEventListener(
     "click",
     (clickEvent) => {
+        const walkers = getWalkers()
         const itemClicked = clickEvent.target
 
         if (itemClicked.id.startsWith("walker")) {
@@ -65,9 +62,11 @@ document.addEventListener(
     }
 )
 
-const walkers = getWalkers()
+
 
 export const Walkers = () => {
+    const walkers = getWalkers()
+
     let walkerHTML = "<ul>"
 
     for (const walker of walkers) {

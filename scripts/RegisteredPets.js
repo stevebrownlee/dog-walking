@@ -22,6 +22,7 @@ document.addEventListener(
 
 
             // Find the related walker object assigned to the pet
+            const walkers = getWalkers()
             let matchingWalker = null
             for (const walker of walkers) {
                 if (matchingPet.walkerId === walker.id) {
@@ -34,10 +35,10 @@ document.addEventListener(
     }
 )
 
-const pets = getPets()
-const walkers = getWalkers()
 
 export const RegisteredPets = () => {
+    const pets = getPets()
+
     let petHTML = "<ul>"
 
     for (const pet of pets) {

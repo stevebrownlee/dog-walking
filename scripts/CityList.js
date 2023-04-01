@@ -1,9 +1,10 @@
 import { getCities } from "./database.js"
 
-const cities = getCities()
 
 
 export const CityList = () => {
+    const cities = getCities()
+
     let citiesHTML = "<ul>"
 
     // TODO: Alphabetize list of city name in ascending order
