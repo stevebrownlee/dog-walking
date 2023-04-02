@@ -1,15 +1,23 @@
-import { getCities } from "./database.js"
+import { getWalkers } from "./database.js"
 
+const walkers = getWalkers()
 
+document.addEventListener(
+    "click",
+    (clickEvt) => {
+        const cityTarget = clickEvt.target
+
+        if (cityTarget.dataset.type === "city") {
+            window.alert(`${cityTarget.dataset.walkername} is servicing this city`)
+        }
+    }
+)
 
 export const CityList = () => {
-    const cities = getCities()
-
     let citiesHTML = "<ul>"
 
-    // TODO: Alphabetize list of city name in ascending order
-    for (const city of cities) {
-        citiesHTML += `<li>${city.name}</li>`
+    for (const walker of walkers) {
+        citiesHTML += `<li data-type="city" data-walkername="${walker.name}">${walker.city}</li>`
     }
 
     citiesHTML += "</ul>"
